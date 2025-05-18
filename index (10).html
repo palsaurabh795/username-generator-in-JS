@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Username Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Username Generator</h1>
+    <input type="text" id="fullName" placeholder="Enter full name without spaces">
+    <button onclick="generateUsername()">Generate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function generateUsername() {
+            let fullName = document.getElementById("fullName").value;
+
+            if (fullName && !fullName.includes(" ")) {
+                let username = "@" + fullName + fullName.length;
+                document.getElementById("result").textContent = "Your username is: " + username;
+            } else {
+                document.getElementById("result").textContent = "Error: Name should not contain spaces.";
+            }
+        }
+    </script>
+
+</body>
+</html>
